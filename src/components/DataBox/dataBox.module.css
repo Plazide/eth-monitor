@@ -1,0 +1,33 @@
+.box{
+	box-sizing: border-box;
+	background: var(--accent);
+	border-radius: 5px;
+	box-shadow: 0 2px 2px rgba(0,0,0,.3);
+
+	width: 180px;
+	height: 100px;
+	padding: .5rem;
+
+	display: flex;
+	flex-direction: column;
+
+	margin: 5px 3px;
+}
+.value{
+	margin-top: 4px;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+.value .unit{
+	font-weight: 300;
+	font-size: .8em;
+	margin-left: 5px;
+}
+.additionalInfo{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	font-size: .9em;
+	justify-content: space-between;
+	margin-top: auto;
+}

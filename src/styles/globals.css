@@ -1,9 +1,17 @@
+:root{
+	--background: #272932;
+	--accent: #2D4962;
+	--text: #CAD2C5;
+}
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+	background: var(--background);
+	color: var(--text);
 }
 
 a {
