@@ -1,8 +1,25 @@
 .container{
-	width: 1000px;
+	width: 100%;
 	max-width: 100%;
 	margin: auto;
+	padding: 2rem;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
 }
+.container .news{
+	height: 90vh;
+	overflow: auto;
+	max-width: 30%;
+	min-width: 200px;
+	margin-right: 50px;
+}
+.container .stats{
+	max-width: 70%;
+}
+
 .data{
 	display: flex;
 	flex-wrap: wrap;
@@ -18,4 +35,19 @@
 	/* width: 800px; */
 	margin: auto;
 
+}
+
+@media only screen and (max-width: 700px){
+	.container{
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+	.container .news{
+		max-width: 100%;
+		margin-right: 0;
+	}
+	.container .stats{
+		max-width: 100%;
+	}
 }

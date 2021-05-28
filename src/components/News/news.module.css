@@ -1,0 +1,39 @@
+.news{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	min-width: 200px;
+}
+.news h2{
+	margin-top: 0;
+}
+
+.post{
+	margin-bottom: 15px;
+	background: var(--accent);
+	padding: 10px;
+	border-radius: 4px;
+}
+.post .title{
+	line-height: 90%;
+	font-weight: bold;
+}
+.post .meta{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.post .meta .sentiment{
+	background: red;
+	width: 100px;
+	height: 10px;
+	position: relative;
+	border-radius: 4px;
+}
+.post .meta .sentiment .positive{
+	position: absolute;
+	height: 100%;
+	background: green;
+	border-radius: inherit;
+}

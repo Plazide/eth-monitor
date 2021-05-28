@@ -12,6 +12,7 @@ import styles from '../styles/Address.module.css'
 import { MinerCurrentStats } from "../types/ethermine";
 import { BinanceAvgPrice, BinanceKline } from "../types/binance";
 import { ExchangeLatest } from "../types/exchangerate";
+import News from "../components/News/News";
 
 interface Props{
 	ethermine: { data: MinerCurrentStats };
@@ -24,34 +25,40 @@ interface Props{
 export default function Home({ ethermine, binance, currency, kline, address }: Props): JSX.Element {
 	return (
 		<div className={styles.container}>
-			<div className={styles.data}>
-				<Unpaid 
-					initialPool={ethermine}
-					initialUsd={binance.price}
-					foreign={currency.rates.SEK}
-					address={address} 
-				/>
-				<Wallet 
-					initialUsd={binance.price}
-					foreign={currency.rates.SEK}
-					address={address}
-				/>
-				<AverageHashrate 
-					initialPool={ethermine}
-					address={address}
-				/>
-				<EthPrice foreign={currency.rates.SEK} initialUsd={binance.price} />
-				<TotalHoldings 
-					initialPool={ethermine}
-					initialUsd={binance.price}
-					foreign={currency.rates.SEK}
-					address={address}
-				/>
+			<div className={styles.news}>
+				<News />
 			</div>
 
-			<div className={styles.charts}>
-				<BinanceCandlestick kline={kline} />
-				<HashrateLineChart initialPool={ethermine} address={address} />
+			<div className={styles.stats}>
+				<div className={styles.data}>
+					<Unpaid 
+						initialPool={ethermine}
+						initialUsd={binance.price}
+						foreign={currency.rates.SEK}
+						address={address} 
+					/>
+					<Wallet 
+						initialUsd={binance.price}
+						foreign={currency.rates.SEK}
+						address={address}
+					/>
+					<AverageHashrate 
+						initialPool={ethermine}
+						address={address}
+					/>
+					<EthPrice foreign={currency.rates.SEK} initialUsd={binance.price} />
+					<TotalHoldings 
+						initialPool={ethermine}
+						initialUsd={binance.price}
+						foreign={currency.rates.SEK}
+						address={address}
+					/>
+				</div>
+
+				<div className={styles.charts}>
+					<BinanceCandlestick kline={kline} />
+					<HashrateLineChart initialPool={ethermine} address={address} />
+				</div>
 			</div>
 		</div>
 	)
